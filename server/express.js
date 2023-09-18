@@ -7,8 +7,10 @@ import helmet from 'helmet'
 import template from '../template'
 import userRoutes from './routes/user.routes'
 import authRoutes from './routes/auth.routes'
+import devBundle from './devBundle' //Only for development mode
 
 const app = express()
+devBundle.compile(app) //Only for development mode
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
